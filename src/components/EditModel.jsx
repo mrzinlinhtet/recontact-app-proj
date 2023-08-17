@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Cookie from "js-cookie";
-import { useGetContactQuery, useUpdateContactMutation } from "../features/api/contactApi";
-import { useNavigate, useParams } from "react-router-dom";
+import { useUpdateContactMutation } from "../features/api/contactApi";
+import { useNavigate } from "react-router-dom";
 import { LuEdit } from "react-icons/lu";
 
 
@@ -91,7 +91,7 @@ const EditModel = ({contact}) => {
                     Your Name
                   </label>
                   <input
-                    value={name}
+                    defaultValue={name}
                     onChange={(e) => setName(e.target.value)}
                     type="text"
                     name="name"
@@ -109,7 +109,7 @@ const EditModel = ({contact}) => {
                     Your Email
                   </label>
                   <input
-                    value={email}
+                    defaultValue={email}
                     onChange={(e) => setEmail(e.target.value)}
                     type="email"
                     name="email"
@@ -127,7 +127,7 @@ const EditModel = ({contact}) => {
                     Your Phone
                   </label>
                   <input
-                    value={phone}
+                    defaultValue={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     type="number"
                     name="phone"
