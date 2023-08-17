@@ -16,6 +16,12 @@ export const contactApi = createApi({
       }),
       providesTags: ["Contact"],
     }),
+    getContact: builder.query({
+      query: ({id}) => ({
+        url: `/contact/${id}`,
+    }),
+      providesTags: ["Contact"],
+    }),
     deleteContact: builder.mutation({
       query: ({ id }) => ({
         url: `/contact/${id}`,
@@ -34,7 +40,16 @@ export const contactApi = createApi({
       }),
       invalidatesTags: ["Contact"],
     }),
+    updateContact: builder.mutation({
+      query: ({ contactResult, token }) => ({
+        url: `/contact/${contactResult.id}`,
+        method: "PATCH",
+        body: contactResult,
+        headers: { Authorization: `Bearer ${token}` },
+      }),
+      invalidatesTags: ["Contact"],
+    }),
   }),
 });
 
-export const { useGetContactsQuery, useDeleteContactMutation, useCreateContactMutation } = contactApi;
+export const { useGetContactsQuery, useGetContactQuery , useDeleteContactMutation, useCreateContactMutation, useUpdateContactMutation } = contactApi;

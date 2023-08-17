@@ -5,8 +5,8 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../features/services/authSlice";
 
 const Login = () => {
-  const [email, setEmail] = useState("zzz999@gmail.com");
-  const [password, setPassword] = useState("asdfasdf");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [login] = useLoginMutation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const Login = () => {
   return (
     <div className="w-full h-screen flex justify-center items-center">
       <form
-        onClick={loginHandler}
+        onSubmit={loginHandler}
         action=""
         className="w-96 flex flex-col items-center bg-gray-50 p-10 rounded shadow gap-5"
       >
@@ -37,11 +37,11 @@ const Login = () => {
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          type="text"
+          type="password  "
           placeholder="Enter your password"
           className="w-72 outline-none border-b-2 py-3 bg-transparent"
         />
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-8">
           <small className="text-xs">
             No have an account?
             <Link to="/register">

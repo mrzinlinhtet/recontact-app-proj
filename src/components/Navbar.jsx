@@ -20,15 +20,15 @@ const Navbar = () => {
   };
   // console.log(user)
   return (
-    <nav className="flex justify-between items-center bg-blue-50 px-10 shadow-sm my-2">
+    <nav className="flex justify-between items-center bg-gray-200 px-10 shadow-sm my-2">
       <h1 className="flex items-center gap-3">
         <AiFillContacts className="text-2xl text-yellow-500" />
         <span className="font-bold text-blue-800">ReContact</span>
       </h1>
       <div className="flex items-center gap-5">
         <div>
-          <p>{user?.name}</p>
-          <small>{user?.email}</small>
+          <p className="text-cyan-600 font-semibold">{user?.name}</p>
+          <small className="text-cyan-500 font-bold">{user?.email}</small>
         </div>
         <button
           onClick={logoutHandler}
