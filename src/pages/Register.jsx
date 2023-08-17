@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { useRegisterUserMutation } from "../features/api/authApi";
 
 const Register = () => {
-  const [name, setName] = useState("Zin Lin Htet");
-  const [email, setEmail] = useState("zzz122@gmail.com");
-  const [password, setPassword] = useState("asdffdsa");
-  const [confirmPassword, setConfirmPassword] = useState("asdffdsa");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
   const [registerUser] = useRegisterUserMutation();
   const navigate = useNavigate();

@@ -5,15 +5,15 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../features/services/authSlice";
 
 const Login = () => {
-  const [email, setEmail] = useState("zzz122@gmail.com");
-  const [password, setPassword] = useState("asdffdsa");
+  const [email, setEmail] = useState("zzz999@gmail.com");
+  const [password, setPassword] = useState("asdfasdf");
   const [login] = useLoginMutation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const loginHandler = async (e) => {
     e.preventDefault();
     const { data } = await login({ email, password });
-    console.log(data.token)
+    // console.log(data.token)
     dispatch(addUser({ user: data.user, token: data.token }));
     if(data?.success) {
       navigate('/') 
