@@ -5,7 +5,8 @@ export const authSlice = createSlice({
      initialState: { user: null, token: null },
      reducers: {
           addUser: (state, { payload }) => {
-               console.log("from rtk" + payload);
+               state.user = payload.user;
+               state.token = payload.token;
           }
      }
 })

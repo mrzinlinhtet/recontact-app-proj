@@ -15,9 +15,9 @@ const Login = () => {
     const { data } = await login({ email, password });
     console.log(data.token)
     dispatch(addUser({ user: data.user, token: data.token }));
-    // if(data?.success) {
-    //   navigate('/')
-    // }
+    if(data?.success) {
+      navigate('/')
+    }
   };
   return (
     <div className="w-full h-screen flex justify-center items-center">
