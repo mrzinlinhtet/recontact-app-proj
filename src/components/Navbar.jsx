@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const logoutHandler = async() => {
    const data = await logout(token)
-  //  console.log(data)
+   console.log(data)
    navigate('/login')
   }
   // console.log(user)

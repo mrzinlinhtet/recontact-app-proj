@@ -16,7 +16,7 @@ const Login = () => {
     console.log(data.token)
     dispatch(addUser({ user: data.user, token: data.token }));
     if(data?.success) {
-      navigate('/')
+      navigate('/') 
     }
   };
   return (
